@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#050d22">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>برنامه‌ریز شخصی</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="blob b1"></div><div class="blob b2"></div>
+<div class="wrap">
+  <header class="glass">
+    <div><h1>برنامه‌ریز هفتگی من</h1><div class="sub" id="sub"></div></div>
+    <div class="hr"><button class="icon-btn" id="bell" title="هشدار">🔔</button><div id="themes"></div></div>
+  </header>
+
+  <div id="home">
+    <div class="days" id="days"></div>
+    <div class="grid">
+      <section class="glass panel">
+        <h2 id="dayTitle"></h2>
+        <form id="f">
+          <input type="time" name="time" required>
+          <input type="text" name="t" placeholder="عنوان کار؟" maxlength="120" required>
+          <input type="color" name="c" title="رنگ کار">
+          <button class="btn">افزودن</button>
+        </form>
+        <div id="list"></div>
+      </section>
+      <aside class="side">
+        <div class="glass panel">
+          <h2 id="ptitle">پیشرفت امروز</h2>
+          <div class="ring" id="ring" style="--p:0"><span id="pct">۰٪</span></div>
+          <div class="rsub" id="rsub">۰/۰ کار</div>
+        </div>
+        <div class="glass panel" id="money">
+          <div class="mh"><h2>💰 مالی روز</h2><div class="mnav"><button id="mprev" type="button">›</button><span id="mdate"></span><button id="mnext" type="button">‹</button></div></div>
+          <div class="mbig" id="mbig"><small>مانده‌ی روز (درآمد − خرج)</small><div class="n" id="mnet">۰ تومان</div>
+            <div class="msub"><div>درآمد<b class="gi" id="minc">۰</b></div><div>خرج<b class="ex" id="mexp">۰</b></div></div></div>
+          <form id="mf" autocomplete="off">
+            <div class="mtype" id="mt"><button type="button" class="mt e on" data-k="e">خرج</button><button type="button" class="mt i" data-k="i">درآمد</button></div>
+            <input name="r" placeholder="دلیل؟ مثلاً ناهار، حقوق..." maxlength="80" required>
+            <input name="a" inputmode="decimal" placeholder="مبلغ" required>
+            <select name="c" id="mc"></select>
+            <button class="btn">ثبت</button>
+          </form>
+          <div class="mcur" id="mcur"></div>
+          <div id="mlist"></div>
+          <details class="rates"><summary>⚙️ نرخ تبدیل ارزها به تومان</summary><div id="rates"></div></details>
+        </div>
+        <div class="glass panel">
+          <h2>نمای هفته</h2>
+          <div id="week"></div>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <div id="detail" class="glass panel">
+    <div class="dhead"><button class="btn ghost" id="back">→ بازگشت</button><span class="sub" id="dday" style="margin:0"></span></div>
+    <div class="dgrid">
+      <div><label>عنوان</label><input id="dt" maxlength="120"></div>
+      <div class="r2">
+        <div><label>ساعت</label><input type="time" id="dtime"></div>
+        <div></div>
+        <div><label>رنگ</label><input type="color" id="dc"></div>
+      </div>
+      <div><label>توضیحات</label><textarea id="dd" placeholder="جزئیات این کار رو اینجا بنویس..."></textarea></div>
+      <div class="dbtns"><button class="btn ghost" id="dal"></button><button class="btn ghost" id="dphone">📱 ساخت آلارم در ساعت گوشی</button></div>
+      <div class="dbtns"><button class="btn" id="ddone"></button><button class="btn red" id="ddel">حذف کار</button></div>
+    </div>
+  </div>
+</div>
+
+<div id="alm"><div class="glass panel"><div class="big">⏰</div><h2 id="alt" style="margin:12px 0 4px"></h2><p class="sub" style="margin:0 0 16px">وقتشه!</p><div class="dbtns"><button class="btn" id="astop">خاموش</button><button class="btn ghost" id="asn">۵ دقیقه دیگه</button></div></div></div>
+<script src="app.js"></script>
+</body>
+</html>
